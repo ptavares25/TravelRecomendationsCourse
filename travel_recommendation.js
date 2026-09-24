@@ -9,11 +9,10 @@ const BEACH_KEYWORDS = ["beach", "beaches"];
 const TEMPLE_KEYWORDS = ["temple", "temples"];
 const COUNTRY_KEYWORDS = ["country", "countries"];
 
-// The JSON uses placeholder names like "enter_your_image_for_sydney.jpg".
-// This turns them into your own image paths, e.g. "images/sydney.jpg".
+// Your image files use the same names as the JSON (e.g. "enter_your_image_for_sydney.jpg")
+// and are stored in the images folder, e.g. "images/enter_your_image_for_sydney.jpg".
 function getImagePath(imageUrl) {
-    const fileName = imageUrl.replace("enter_your_image_for_", "");
-    return IMAGE_FOLDER + fileName;
+    return IMAGE_FOLDER + imageUrl;
 }
 
 // ---------- 1. Load the data ----------
