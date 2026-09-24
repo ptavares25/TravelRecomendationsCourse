@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendations</title>
+    <style>
+        /* ---------- Beige theme colours ---------- */
+        :root {
+            --beige-light: #faf6ec;
+            --beige: #f5ecd7;
+            --beige-dark: #e3d4b3;
+            --brown: #a67c52;
+            --brown-dark: #7a5a3a;
+            --text: #3e2f20;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--beige-light);
+            color: var(--text);
+        }
+
+        /* ---------- Navbar ---------- */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--beige);
+            border-bottom: 1px solid var(--beige-dark);
+            padding: 8px 40px;
+            min-height: 57px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 40px;
+            background-color: var(--beige-dark);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--brown);
+        }
+
+        .nav-links a.active {
+            font-weight: bold;
+        }
+
+        /* ---------- About page ---------- */
+        .about {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .about h1 {
+            font-size: 42px;
+            color: var(--brown-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about-text {
+            max-width: 750px;
+            margin: 0 auto 60px;
+            font-size: 18px;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .about-text p + p {
+            margin-top: 16px;
+        }
+
+        .about h2 {
+            font-size: 32px;
+            color: var(--brown-dark);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .team-member {
+            background-color: #ffffff;
+            border: 1px solid var(--beige-dark);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: var(--beige-dark);
+            color: var(--brown-dark);
+            font-size: 30px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .team-member h3 {
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .team-member .role {
+            color: var(--brown);
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <!-- Logo -->
+        <a href="travel_recommendation.html" class="logo">
+            <span class="logo-icon">
+                <!-- Simple plane icon -->
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#7a5a3a" aria-hidden="true">
+                    <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                </svg>
+            </span>
+            <span class="logo-text">Travel Recommendations</span>
+        </a>
+
+        <!-- Page links -->
+        <ul class="nav-links">
+            <li><a href="travel_recommendation.html">Home</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main class="about">
+        <!-- Company information -->
+        <h1>About Us</h1>
+        <div class="about-text">
+            <p>
+                Travel Recommendations helps travellers discover destinations that suit
+                them. Whether you are dreaming of quiet beaches, ancient temples or
+                vibrant cities, we bring together handpicked places from around the
+                world in one simple search.
+            </p>
+            <p>
+                Our mission is to make trip planning easy and inspiring. We research each
+                destination carefully and share clear, honest recommendations so you can
+                spend less time searching and more time exploring.
+            </p>
+        </div>
+
+        <!-- Team members -->
+        <h2>Meet Our Team</h2>
+        <div class="team">
+            <div class="team-member">
+                <div class="avatar">AS</div>
+                <h3>Ana Silva</h3>
+                <p class="role">CEO &amp; Founder</p>
+            </div>
+            <div class="team-member">
+                <div class="avatar">JM</div>
+                <h3>João Martins</h3>
+                <p class="role">Head of Travel Research</p>
+            </div>
+            <div class="team-member">
+                <div class="avatar">SC</div>
+                <h3>Sofia Costa</h3>
+                <p class="role">Content Writer</p>
+            </div>
+            <div class="team-member">
+                <div class="avatar">RP</div>
+                <h3>Rui Pereira</h3>
+                <p class="role">Web Developer</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

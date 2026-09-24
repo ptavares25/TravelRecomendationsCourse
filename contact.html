@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendations</title>
+    <style>
+        /* ---------- Beige theme colours ---------- */
+        :root {
+            --beige-light: #faf6ec;
+            --beige: #f5ecd7;
+            --beige-dark: #e3d4b3;
+            --brown: #a67c52;
+            --brown-dark: #7a5a3a;
+            --text: #3e2f20;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--beige-light);
+            color: var(--text);
+        }
+
+        /* ---------- Navbar ---------- */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--beige);
+            border-bottom: 1px solid var(--beige-dark);
+            padding: 8px 40px;
+            min-height: 57px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 40px;
+            background-color: var(--beige-dark);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--brown);
+        }
+
+        .nav-links a.active {
+            font-weight: bold;
+        }
+
+        /* ---------- Contact page ---------- */
+        .contact {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .contact h1 {
+            font-size: 42px;
+            color: var(--brown-dark);
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .contact .subtitle {
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 36px;
+        }
+
+        .contact-form {
+            background-color: #ffffff;
+            border: 1px solid var(--beige-dark);
+            border-radius: 12px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            font-family: inherit;
+            font-size: 16px;
+            color: var(--text);
+            background-color: var(--beige-light);
+            border: 1px solid var(--beige-dark);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--brown);
+            box-shadow: 0 0 0 3px rgba(166, 124, 82, 0.2);
+        }
+
+        .btn-submit {
+            align-self: flex-start;
+            background-color: var(--brown);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 32px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--brown-dark);
+        }
+
+        .success-message {
+            display: none;
+            color: var(--brown-dark);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <!-- Logo -->
+        <a href="travel_recommendation.html" class="logo">
+            <span class="logo-icon">
+                <!-- Simple plane icon -->
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#7a5a3a" aria-hidden="true">
+                    <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                </svg>
+            </span>
+            <span class="logo-text">Travel Recommendations</span>
+        </a>
+
+        <!-- Page links -->
+        <ul class="nav-links">
+            <li><a href="travel_recommendation.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main class="contact">
+        <h1>Contact Us</h1>
+        <p class="subtitle">
+            Have a question or need help planning your next trip?
+            Send us a message and we'll get back to you soon.
+        </p>
+
+        <!-- Contact form -->
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit</button>
+            <p class="success-message" id="successMessage">Thank you! Your message has been sent.</p>
+        </form>
+    </main>
+
+    <script>
+        // There is no server yet, so show a thank-you message instead of sending the form
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            this.reset();
+            document.getElementById("successMessage").style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
